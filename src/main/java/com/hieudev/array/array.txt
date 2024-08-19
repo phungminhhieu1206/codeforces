@@ -1,0 +1,9 @@
+- Mang: Tap hop cac phan tu cung kieu
+array[1]
+array[2][3]
+
+- Khai bao mang:
+int[] c = {1, 2, 3}
+int[] a = new int[5]
+
+- Thao tac: duyet mang, them, xoa
