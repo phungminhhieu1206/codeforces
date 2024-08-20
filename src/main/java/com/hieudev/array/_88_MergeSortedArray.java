@@ -1,5 +1,9 @@
 package com.hieudev.array;
 
+/**
+ * Cách 1: thêm lần lượt sau đó sort cả mảng
+ * Cách 2: Thêm lần lượt vào đúng vị trí
+ */
 public class _88_MergeSortedArray {
     public static void main(String[] args) {
         _88_MergeSortedArray obj = new _88_MergeSortedArray();
@@ -15,6 +19,26 @@ public class _88_MergeSortedArray {
     }
 
     public void merge(int[] nums1, int m, int[] nums2, int n) {
+        for (int ai: nums2) {
+            insertItemToArray(nums1, m, ai);
+            m++;
+        }
+    }
+
+    public void insertItemToArray(int[] n1, int m, int ai) {
+        for (int i=0; i<m; i++) {
+            if (ai<n1[i]) {
+                for (int j=m; j>i; j--) {
+                    n1[j] = n1[j-1];
+                }
+                n1[i] = ai;
+                return;
+            }
+        }
+        n1[m]=ai;
+    }
+
+    public void mergeWay1(int[] nums1, int m, int[] nums2, int n) {
         int temp[] = new int[m+n];
 
         for (int i=m; i<m+n; i++) {
