@@ -1,0 +1,5 @@
+Kỹ thuật 2 con trỏ:
+- 2 con trỏ trên 1 mảng hoặc 2 mảng khác nhau
+- tối ưu, làm giảm quá trình chạy bài
+
+-> Giảm số vòng lặp for cho các bài toán 2 vòng lặp for xuống 1 vòng for

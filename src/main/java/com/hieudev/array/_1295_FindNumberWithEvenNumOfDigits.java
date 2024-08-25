@@ -1,5 +1,8 @@
 package com.hieudev.array;
 
+/**
+ * Kỹ thuật duyệt mảng
+ */
 public class _1295_FindNumberWithEvenNumOfDigits {
     public static void main(String[] args) {
         _1295_FindNumberWithEvenNumOfDigits obj = new _1295_FindNumberWithEvenNumOfDigits();
@@ -7,9 +10,6 @@ public class _1295_FindNumberWithEvenNumOfDigits {
         System.out.println("result: " + obj.findNumbers(a));
     }
 
-    /**
-     * Duyet mang
-     */
     public int findNumbers(int[] nums) {
         int count = 0;
 

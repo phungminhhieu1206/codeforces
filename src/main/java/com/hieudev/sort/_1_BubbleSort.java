@@ -1,8 +1,6 @@
 package com.hieudev.sort;
 
-/**
- * O(n^2)
- */
+// O(n^2)
 public class _1_BubbleSort {
     public static void main(String[] args) {
         _1_BubbleSort obj = new _1_BubbleSort();

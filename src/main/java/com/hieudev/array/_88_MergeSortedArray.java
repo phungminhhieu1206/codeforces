@@ -1,6 +1,7 @@
 package com.hieudev.array;
 
 /**
+ * [Thêm phần tử vào mảng]
  * Cách 1: thêm lần lượt sau đó sort cả mảng
  * Cách 2: Thêm lần lượt vào đúng vị trí
  */
