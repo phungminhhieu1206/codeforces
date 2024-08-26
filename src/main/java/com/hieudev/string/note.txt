@@ -1,0 +1,5 @@
+- String được tạo thành từ các characters
+- char là kiểu nguyên thủy của Character (kiểu đóng gói, gồm nhiều phương thức hỗ trợ)
+- char mặc định là mã ascii và có thể biểu diễn bằng số int
+
+
