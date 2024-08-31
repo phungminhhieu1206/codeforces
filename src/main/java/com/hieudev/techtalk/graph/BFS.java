@@ -1,12 +1,11 @@
-/* package whatever; // don't place package name! */
+package com.hieudev.techtalk.graph;
 
 import java.util.*;
 import java.lang.*;
 import java.io.*;
 
 /* Name of the class has to be "Main" only if the class is public. */
-class Ideone
-{
+public class BFS {
     static class Graph {
         private final int V; // number of vertices
         private final ArrayList<Integer>[] adj; // adjacency list

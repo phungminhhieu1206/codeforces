@@ -1,12 +1,10 @@
-/* package whatever; // don't place package name! */
+package com.hieudev.techtalk.graph._LoudAndRich;
 
 import java.util.*;
 import java.lang.*;
-import java.io.*;
 
 /* Name of the class has to be "Main" only if the class is public. */
-class Ideone
-{
+public class _LoudAndRich {
 public static void main(String[] args) {
         int[][] richer = new int[][]{{1, 0}, {2, 1}, {3, 1}, {3, 7}, {4, 3}, {5, 3}, {6, 3}};
         int[] quiet = new int[]{3, 2, 5, 4, 6, 1, 7, 0};
