@@ -1,4 +1,4 @@
-package com.hieudev.techtalk.graph;
+package com.hieudev.techtalk.graph.DFS;
 
 import java.util.*;
 import java.lang.*;

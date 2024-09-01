@@ -1,23 +1,22 @@
-package com.hieudev.techtalk.graph;
+package com.hieudev.techtalk.graph.BFS;
 
 import java.util.*;
 import java.lang.*;
-import java.io.*;
 
-/* Name of the class has to be "Main" only if the class is public. */
 public class BFS {
     static class Graph {
-        private final int V; // number of vertices
-        private final ArrayList<Integer>[] adj; // adjacency list
+        private final int V; // number of vertices: tập đỉnh
+        private final ArrayList<Integer>[] adj; // adjacency list: lưu cạnh
 
         public Graph(int V) {
             this.V = V;
-            adj = new ArrayList[V];
+            adj = new ArrayList[V]; // Danh sách kề để biểu diễn cạnh
             for (int i = 0; i < V; i++) {
                 adj[i] = new ArrayList<>();
             }
         }
 
+        // cạnh (u, v)
         public void addEdge(int u, int v) {
             adj[u].add(v);
         }
@@ -32,12 +31,12 @@ public class BFS {
             visited[s] = true;
             queue.add(s);
             while (!queue.isEmpty()) {
-                int u = queue.remove();
+                int u = queue.remove(); // 1. thăm đỉnh u
                 // process u
                 System.out.print(u + " ");
 
-                for (int v : adj[u]) {
-                    if (!visited[v]) {
+                for (int v : adj[u]) { // 2. duyệt tất cả đỉnh có cạnh với u
+                    if (!visited[v]) { // 2.1 nếu chưa thăm thì tiến thành thăm, ngược lại thì pass qua
                         visited[v] = true;
                         queue.add(v);
                     }

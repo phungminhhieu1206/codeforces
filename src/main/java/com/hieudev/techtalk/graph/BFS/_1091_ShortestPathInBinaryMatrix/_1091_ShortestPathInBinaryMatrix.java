@@ -1,10 +1,9 @@
-package com.hieudev.techtalk.graph._1091_ShortestPathInBinaryMatrix;/* package whatever; // don't place package name! */
+package com.hieudev.techtalk.graph.BFS._1091_ShortestPathInBinaryMatrix;
 
 import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-/* Name of the class has to be "Main" only if the class is public. */
 public class _1091_ShortestPathInBinaryMatrix
 {
  public static void main(String[] args) {
