@@ -1,4 +1,4 @@
-package com.hieudev.techtalk.graph._841_KeysAndRooms;
+package com.hieudev.techtalk.graph.DFS._841_KeysAndRooms;
 
 import java.util.*;
 import java.lang.*;

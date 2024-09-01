@@ -4,9 +4,12 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-/* Name of the class has to be "Main" only if the class is public. */
-class DFS
-{
+/**
+ * Bắt đầu từ u -> Thêm u vào stack
+ * stack.pop() thăm u. và thêm các đỉnh có cạnh với u vào stack
+ * stack.pop dần và lặp lại cho đến khi stack rỗng
+ */
+public class DFS {
     static class Graph {
         private final int V; // number of vertices
         private final ArrayList<Integer>[] adj; // adjacency list

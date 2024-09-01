@@ -1,0 +1,17 @@
+Yc:
+- biết sử dụng struct/class trong java -> tạo data structure riêng
+- phân biệt được reference type và value/primitive type trong java (hoặc con trỏ trong c++)
+
+public class Node
+{
+    int val;
+    Node next;
+    Node(int x) {
+        val = x;
+    }
+}
+
+- Đặc điểm của simply linked list:
++ Chỉ cần lưu note head
++ Khả năng truy xuất phần tử O(n)
++ Thêm/xóa phần tử: O(1)* nếu biết chắc chắn vị trí trước | sau nó
