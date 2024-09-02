@@ -1,0 +1,21 @@
+Ứng dụng nhiều nhất của stack và queue là dùng cho 2 thuật toán duyệt đồ thị phổ biến:
++ BFS (Breadth first search): queue
++ DFS (Depth first search): stack
+
+- Thao tác chính khi dùng stack, queue:
++ Cấu trúc giống nhau, chỉ khác ở cách thức thêm/lấy phần tử vào/ra cấu trúc đó
++ push, pop, isFull, isEmpty
+
+- Cách cài đặt:
++ array, linked list
+
+- Stack trong java: Iterable <- Collection <- List <-- Vector <- Stack*
+vd: Stack<Integer> stack = new Stack<>();
++ push(1)
++ pop(): lấy giá trị và loại bỏ
++ peek(): lấy giá trị
++ isEmpty()
+
+- Queue trong java: Iterable <- Collection <- Queue <- Deque <-- ArrayDequeue*
+                                           <- Queue <-- PriorityQueue*
+cd: Queue<Integer> queue = new LinkedList<>();
