@@ -1,0 +1,19 @@
+===============** Hash table **================
+- Đặt vấn đề: Bài toán lưu danh bạ (tên người - sdt)
++ Giải pháp trước: Lưu mảng tên người và mảng sdt tương ứng
++ Duyệt mảng tên người -> return index, lấy index đấy truy vấn mảng sdt
++ Độ phức tạp: O(n)
+
+- Hướng khác: hash table (các loại kiểu dữ liệu dạng key-value `tương ứng`)
++ Vẫn lưu mảng số điện thoại và bằng 1 kỹ thật "nào đó" sẽ
+chuyển tên người tương ứng thành index của mảng số kia
+key: tên người --hash_function--> value: index (dùng truy xuat mang sdt)
+
+- hash function là quan trọng nhất của hash table,
+sẽ tùy thuộc vào giá trị và số lượng item trong bucket (vd: bucket sdt) để định nghĩa hash function
+- Vấn đề là: tập key trong nhiều trường hơp thuc tế rất lớn, ko thể map 1-1 thành value index
+thông qua hash function được. Do đó sẽ dẫn đến 2 key khác nhau nhưng dùng 1 value index sau
+khi qua hash function -> hiện tượng Collision!
+[Giải quyết]: Sử dụng linkedlist hoặc array aiji mỗi bucket
+
+- Ứng dụng: Tạo ctdl HashSet và HashMap

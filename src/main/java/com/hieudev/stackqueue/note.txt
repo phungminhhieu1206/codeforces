@@ -22,4 +22,7 @@ vd: Stack<Integer> stack = new Stack<>();
 vd: Queue<Integer> queue = new LinkedList<>();
 + LinkedList và ArrayDequeue đều implement Deque trong java, khác nhau ở cấu trúc lưu trữ.
 Do trong queue thì không quan trọng việc truy xuất nên ưu tiên sử dụng LinkedList để tối ưu bộ nhớ hơn!
-+
++ add(1)
++ poll(): return null nếu queue rỗng, remove(): throw exception nếu queue rỗng
++ peek()
++ isEmpty()
