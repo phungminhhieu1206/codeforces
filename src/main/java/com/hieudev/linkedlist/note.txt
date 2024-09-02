@@ -1,3 +1,5 @@
+===============** Linked list **================
+
 Yc:
 - biết sử dụng struct/class trong java -> tạo data structure riêng
 - phân biệt được reference type và value/primitive type trong java (hoặc con trỏ trong c++)

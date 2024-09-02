@@ -1,3 +1,4 @@
+===============/// Stack & Queue \\\================
 Ứng dụng nhiều nhất của stack và queue là dùng cho 2 thuật toán duyệt đồ thị phổ biến:
 + BFS (Breadth first search): queue
 + DFS (Depth first search): stack
@@ -16,6 +17,9 @@ vd: Stack<Integer> stack = new Stack<>();
 + peek(): lấy giá trị
 + isEmpty()
 
-- Queue trong java: Iterable <- Collection <- Queue <- Deque <-- ArrayDequeue*
+- Queue trong java: Iterable <- Collection <- Queue <- Deque <-- ArrayDequeue*/LinkedList*
                                            <- Queue <-- PriorityQueue*
-cd: Queue<Integer> queue = new LinkedList<>();
+vd: Queue<Integer> queue = new LinkedList<>();
++ LinkedList và ArrayDequeue đều implement Deque trong java, khác nhau ở cấu trúc lưu trữ.
+Do trong queue thì không quan trọng việc truy xuất nên ưu tiên sử dụng LinkedList để tối ưu bộ nhớ hơn!
++

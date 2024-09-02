@@ -1,3 +1,5 @@
+===============** Array **================
+
 - Mang: Tap hop cac phan tu cung kieu
 array[1]
 array[2][3]
