@@ -1,4 +1,4 @@
-package com.hieudev.stackqueue;
+package com.hieudev.stackqueue.stack;
 
 import java.util.Scanner;
 import java.util.Stack;
@@ -19,7 +19,33 @@ public class _20_ValidParentheses {
         System.out.println("result: " + isValid(str));
     }
 
+    // Nhanh hơn cách 1
     public static boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == '(' || c == '[' || c == '{') {
+                stack.push(c);
+            } else {
+                // case gặp dấu đóng ngoặc luôn khi chưa có dấu mở ngoặc:
+                if (stack.isEmpty()) return false;
+
+                char openPeek = stack.peek();
+                if ((openPeek == '(' && c == ')') ||
+                        (openPeek == '[' && c == ']') ||
+                        (openPeek == '{' && c == '}')) {
+                    stack.pop();
+                } else {
+                    return false;
+                }
+            }
+        }
+
+        return stack.isEmpty();
+    }
+
+    public static boolean isValidWay1(String s) {
         if(s.length()%2 != 0) {
             return false;
         }
