@@ -1,0 +1,3 @@
+
+- Cải tiến của đệ quy có nhớ
+- Quy hoạch động (sử dụng đệ quy có nhớ,

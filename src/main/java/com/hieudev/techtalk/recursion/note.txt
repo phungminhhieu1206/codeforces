@@ -1,0 +1,8 @@
+================= Recursion ================
+- Đệ quy: Hàm tự gọi đên chính nó!
+
+- Khi nào sử dụng đệ quy?
+-> Khi xuất hiện yếu tố đệ quy trong bài toán (quy nạp):
++ Có bài toán cơ bản (Điều kiện dừng)
++ Có công thức quy nạp (Đưa dần bài toán lớn về bài toán nhỏ hơn, cuối cùng là bài toán cơ sở)
+
