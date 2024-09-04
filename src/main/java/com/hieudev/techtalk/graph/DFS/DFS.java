@@ -5,6 +5,10 @@ import java.lang.*;
 import java.io.*;
 
 /**
+ * Quan tâm đến:
+ * + đỉnh nguồn: s,
+ * + tập cạnh: adj[]
+ * ---------------------------
  * Bắt đầu từ u -> Thêm u vào stack
  * stack.pop() thăm u. và thêm các đỉnh có cạnh với u vào stack
  * stack.pop dần và lặp lại cho đến khi stack rỗng
@@ -28,10 +32,15 @@ public class DFS {
 
         // -----------------------------------------------------------------
 
+        public void dfsRecursive(int s) {
+            boolean[] visited = new boolean[V];
+            dfs(s, visited);
+        }
+
         // recursive DFS
         private void dfs(int s, boolean[] visited) {
             visited[s] = true;
-            System.out.print(s + " ");
+            System.out.print(s + ", ");
             for (int v : adj[s]) {
                 if (!visited[v]) {
                     dfs(v, visited);
@@ -39,22 +48,18 @@ public class DFS {
             }
         }
 
-        public void dfs(int s) {
-            boolean[] visited = new boolean[V];
-            dfs(s, visited);
-        }
-
         // stack DFS
-        public void dfs_stack(int s) {
+        public void dfsStack(int s) {
             Deque<Integer> stack = new ArrayDeque<>();
             boolean[] visited = new boolean[V];
-
             stack.push(s);
             while (!stack.isEmpty()) {
                 int u = stack.pop();
                 if (!visited[u]) {
-                    visited[u] = true;          // only mark visited when pop from stack
-                    System.out.print(u + " ");  // process u
+                    visited[u] = true; // only mark visited when pop from stack
+                    // process u
+                    System.out.print(u + ", ");
+
                     for (int v : adj[u]) {
                         if (!visited[v]) {
                             stack.push(v);
@@ -63,48 +68,30 @@ public class DFS {
                 }
             }
         }
-
     }
 
     public static void main(String[] args) {
-        int V = 13;
+        int V = 7;
         Graph g = new Graph(V);
-        g.addEdge(1, 3);
-        g.addEdge(1, 5);
-        g.addEdge(1, 6);
-        g.addEdge(1, 9);
-        g.addEdge(2, 6);
-        g.addEdge(2, 4);
-        g.addEdge(2, 8);
-        g.addEdge(3, 1);
-        g.addEdge(3, 5);
-        g.addEdge(3, 6);
-        g.addEdge(3, 7);
-        g.addEdge(4, 10);
-        g.addEdge(4, 2);
-        g.addEdge(5, 1);
-        g.addEdge(5, 3);
-        g.addEdge(5, 7);
-        g.addEdge(6, 3);
-        g.addEdge(6, 1);
-        g.addEdge(6, 2);
-        g.addEdge(7, 3);
-        g.addEdge(7, 5);
-        g.addEdge(8, 2);
-        g.addEdge(8, 3);
-        g.addEdge(9, 1);
-        g.addEdge(9, 11);
-        g.addEdge(9, 12);
-        g.addEdge(10, 4);
-        g.addEdge(11, 9);
-        g.addEdge(11, 12);
-        g.addEdge(12, 11);
-        g.addEdge(12, 9);
+        g.addEdge(0,1);
+        g.addEdge(0,2);
+        g.addEdge(1,0);
+        g.addEdge(1,2);
+        g.addEdge(1,3);
+        g.addEdge(2,0);
+        g.addEdge(2,1);
+        g.addEdge(3,1);
+        g.addEdge(3,4);
+        g.addEdge(3,6);
+        g.addEdge(4,3);
+        g.addEdge(4,5);
+        g.addEdge(5,4);
+        g.addEdge(6,3);
 
         System.out.print("Start recursive DFS from 1: ");
-        g.dfs(1);
+        g.dfsRecursive(0);
         System.out.print("\nStart stack DFS from 1: ");
-        g.dfs_stack(1);
+        g.dfsStack(0);
         System.out.println();
     }
 }
