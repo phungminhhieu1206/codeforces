@@ -1,0 +1,97 @@
+int cnt = 0;
+int[] num = new int[nums_v];
+Array.fills(num, 0);
+
+dfs(int u, int p) {
+    num[u] = ++cnt; // tăng trước để đánh số ít nhất từ 1
+    for (int v: adj[u] {
+        if (v == p) continue; // đảm bảo không quay về đỉnh cha
+        dfs (v, u);
+    }
+}
+
+--------------------------------
+low[u]: Lưu đỉnh thấp nhất mà đỉnh u có thể đến (low[v] luôn <= num[v])
+dfs(int u, int p) {
+    num[u] = low[u] = ++cnt; // tăng trước để đánh số ít nhất từ 1
+    for(int v: adj[u]) {
+        if (v == p) continue; // đảm bảo không quay về đỉnh cha
+
+        if (num[v] != 0) { // nếu v đã thăm, tức cung (u,v) là cung ngược -> cập nhật lại low[u]
+            low[u] = min(low[u], num[v]);
+        } else {
+            dfs(v, u);
+            low[u] = min(low[u], low[v]);
+        }
+    }
+}
+
+* Tìm cạnh cầu?
+- (u, v) là cạnh cầu nếu:
++ num[u] < num[v] (u là cha của v) VÀ
++ phần phía sau v không có bất cứ cạnh nào quay ngược về đỉnh đã duyệt từ u về trước
+(tức low[v] > num[u] hoặc điều kiện là low[v] == num[v]) -> đây là cầu!
+
+dfs(int u, int p) {
+    num[u] = low[u] = ++cnt; // tăng trước để đánh số ít nhất từ 1
+    for(int v: adj[u]) {
+        if (v == p) continue; // đảm bảo không quay về đỉnh cha
+
+        if (num[v] != 0) { // nếu v đã thăm, tức cung (u,v) là cung ngược -> cập nhật lại low[u]
+            low[u] = min(low[u], num[v]);
+        } else {
+            dfs(v, u);
+            low[u] = min(low[u], low[v]);
+
+            // đếm cầu
+            if (low[v] > num[u]) brigde++;
+        }
+    }
+}
+
+* Tìm đỉnh khớp?
+- u là khớp nếu:
++ nếu bỏ u thì v (con u) không có cách nào đi ngược lại các đỉnh khác trước u
+(tức: low[v] >= num[u] và ngoài u phải có ít nhất 2 đỉnh kề)
+- ở đây sẽ dùng đến p: (nếu p != 0 tức u không phải gốc, u đã nối với đỉnh phía khác phía trên)
+
+dfs(int u, int p) {
+    num[u] = low[u] = ++cnt; // tăng trước
+
+    // khớp
+    int sumNode = p != 0 ? 1 : 0;
+
+    for(int v: adj[u]) {
+        if (v == p) continue; // đảm bảo không quay về đỉnh cha
+
+        if (num[v] != 0) { // nếu v đã thăm, tức cung (u,v) là cung ngược -> cập nhật lại low[u]
+            low[u] = min(low[u], num[v]);
+        } else {
+            dfs(v, u);
+            low[u] = min(low[u], low[v]);
+
+            // đếm cầu
+            if (low[v] > num[u]) brigde++;
+
+            // đếm khớp
+            if (low[v] >= num[u]) sumNode++;
+        }
+    }
+
+    // đếm khớp
+    if (node >= 2) articulationPoint++;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
